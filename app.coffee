@@ -28,8 +28,7 @@ meryl.h('GET /{param}?',(req, res) ->
   res.end("<h1>#{klop} is coming</h1>")
 )
 
-meryl.run()
-
+meryl.run({debug:true, port: 8962})
 
 
 
