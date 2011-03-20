@@ -27,7 +27,7 @@ meryl.h('GET /{param}?',(req, res) ->
     klop = req.params.param
   res.end("<h1>#{klop} is coming</h1>")
 )
-
+http.createServer(meryl.cgi()).listen(8962)
 meryl.run({debug:true, port: 8962})
 
 
