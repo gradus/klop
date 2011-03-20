@@ -4,10 +4,9 @@ fs = require('fs')
 _ = require('underscore')
 coffeekup = require 'coffeekup'
 connect = require 'connect'
+meryl = require('meryl')
 
 people = ['animal', 'beakers', 'piggy', 'kermit']
-
-meryl = require('meryl')
 
 meryl.get '/', (req, resp) ->
   resp.render 'index'
@@ -25,9 +24,9 @@ meryl.get '/people/{personid}', (req, resp) ->
     context:
       person: people[req.params.personid]
 
-meryl.run
+http.createServer(
+  meryl.cgi
     templateExt: '.coffee'
     templateFunc: coffeekup.adapters.meryl
-    port: 8962
-
+).listen(8962)
 console.log 'listening...'
