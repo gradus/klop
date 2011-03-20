@@ -2,33 +2,32 @@ sys = require "sys"
 http = require('http')
 fs = require('fs')
 _ = require('underscore')
+coffeekup = require 'coffeekup'
+connect = require 'connect'
+
+people = ['animal', 'beakers', 'piggy', 'kermit']
+
 meryl = require('meryl')
-# actions = []
 
-# http.createServer (req, res) ->
-#   res.writeHead(200, {'Content-Type': 'text/html'})
-#   #Add a listener to the request for the request body data
-#   klop = "KLOP is coming!!"
-#   req.addListener('data', (data) ->
-#     klop = data.toString()
-#   ).addListener('end', () ->
-#       res.end("<h1>#{klop}</h1>")
-#     )
-# .listen(8962)
+meryl.get '/', (req, resp) ->
+  resp.render 'index'
+  # resp.redirect('/people')
 
-# sys.puts "Server running at http://127.0.0.1:8962/"
-#
-#
-meryl.h('GET /{param}?',(req, res) ->
-  res.writeHead(200, {'Content-Type': 'text/html'})
-  if req.params.param == undefined
-    klop = "KLOP"
-  else
-    klop = req.params.param
-  res.end("<h1>#{klop} is coming</h1>")
-)
-http.createServer(meryl.cgi()).listen(8962)
-meryl.run({debug:true, port: 8962})
+meryl.get '/people', (req, resp) ->
+  resp.render 'layout',
+    content: 'list'
+    context:
+      people: people
 
+meryl.get '/people/{personid}', (req, resp) ->
+  resp.render 'layout',
+    content: 'show'
+    context:
+      person: people[req.params.personid]
 
+meryl.run
+    templateExt: '.coffee'
+    templateFunc: coffeekup.adapters.meryl
+    port: 8962
 
+console.log 'listening...'
