@@ -9,7 +9,10 @@ meryl = require('meryl')
 people = ['animal', 'beakers', 'piggy', 'kermit']
 
 meryl.get '/', (req, resp) ->
-  resp.render 'index'
+  resp.render 'layout',
+    content: 'index'
+    context:
+      people: people
   # resp.redirect('/people')
 
 meryl.get '/people', (req, resp) ->
