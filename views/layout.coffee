@@ -9,5 +9,5 @@ html ->
         "KLOP is Coming"
     div id: 'wrap',
       -> @render @content, @context
-    div id: 'header', ->
+    div id: 'footer', ->
       p 'Powered with Meryl, Node, Coffescript, and Coffeekup!'
