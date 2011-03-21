@@ -2,6 +2,8 @@
 
 This is a demo app running on node
 
+npm install coffee-script
+
 npm install meryl
 
 npm install underscore
