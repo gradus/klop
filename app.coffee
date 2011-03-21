@@ -2,6 +2,7 @@ connect = require('./lib/connect')
 sys = require("sys")
 http = require('http')
 fs = require('fs')
+#underscore not yet in user
 _ = require('underscore')
 coffeekup = require('coffeekup')
 meryl = require('meryl')
