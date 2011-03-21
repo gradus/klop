@@ -8,9 +8,11 @@ npm install underscore
 
 npm install coffeekup
 
+npm install dirty
+
 run tests with 'cake test'
 
 start with 'coffee app.coffee'
 
-go to localhost:8962
+go to localhost:8975
 
