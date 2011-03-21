@@ -1,7 +1,7 @@
 connect = require('./lib/connect')
 sys = require("sys")
 http = require('http')
-fs = require('fs')
+# fs = require('fs')
 #underscore not yet in use
 _ = require('underscore')
 coffeekup = require('coffeekup')
