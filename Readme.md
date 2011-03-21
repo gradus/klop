@@ -1,10 +1,8 @@
 ##Klop
 
-demo app running on node
+This is a demo app running on node
 
 npm install meryl
-
-npm install connect
 
 npm install underscore
 
