@@ -2,7 +2,7 @@ connect = require('./lib/connect')
 sys = require("sys")
 http = require('http')
 fs = require('fs')
-#underscore not yet in user
+#underscore not yet in use
 _ = require('underscore')
 coffeekup = require('coffeekup')
 meryl = require('meryl')
@@ -29,7 +29,7 @@ server = connect(
     templateDir: 'views'
     connect.logger()
 )
-server.listen(8962)
+server.listen(8975)
 console.log 'listening...'
 
 people = ['Animal', 'Beaker', 'Piggy', 'Kermit']
