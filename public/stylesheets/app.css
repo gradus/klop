@@ -1,5 +1,26 @@
 body {
   background-color: #ccc;
+  font-family: georgia;
+  color: #666;
+
+}
+
+h3 {
+  color: #999
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #666
+}
+
+a:hover {
+  color: #191919;
+}
+
+#wrap {
+  width:900px; 
+  margin:5px auto;
 }
 
 #header {
@@ -10,18 +31,21 @@ body {
   margin-bottom: 4px;
   border-radius: 5px;
 }
-#wrap {
+
+#content {
   background-color: whitesmoke;
   width: 60%;
   padding: 10px;
   margin: 5px 0;
   border-radius: 5px;
+  color: #171717;
 }
-#wrap ul {
+#content ul {
   list-style: none;
 }
 
-img { margin: 10px;}
+#content img { margin: 10px;}
+
 
 #footer {
   background-color: seaShell;
@@ -33,12 +57,17 @@ img { margin: 10px;}
 
 }
 
-#left {
+#footer img {
   float: left;
 }
 
+#left {
+  float: left;
+  padding-bottom: 10px;
+}
+
 #right {
-  padding: 3px;
+  padding: 10px;
 }
 
 #clear {
