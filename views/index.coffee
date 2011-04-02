@@ -14,54 +14,58 @@ div id: 'chessboard', ->
     for num in [8..1]
       tr ->
         for letter in ['a','b','c','d','e','f','g','h']
-          if num in [1,3,5,7] and letter in ['a','c','e','g']
-            td class: "dark #{num+letter}", ->
+          if num % 2 == 1 and letter in ['a','c','e','g']
+            td class: "dark", ->
               if num == 7
                 img src: 'images/chess_pieces/black_pawn.png', class: "chess_piece #{num+letter}"
-              if num == 1 and letter in ['a','h']
-                img src: 'images/chess_pieces/white_rook.png', class: "chess_piece #{num+letter}"
-              if num == 1 and letter in ['b','g']
-                img src: 'images/chess_pieces/white_knight.png', class: "chess_piece #{num+letter}"
-              if num == 1 and letter in ['c','f']
-                img src: 'images/chess_pieces/white_bishop.png', class: "chess_piece #{num+letter}"
-              if num == 1 and letter == 'e'
-                img src: 'images/chess_pieces/white_queen.png', class: "chess_piece #{num+letter}"
+              if num == 1
+                if letter == 'a'
+                  img src: 'images/chess_pieces/white_rook.png', class: "chess_piece #{num+letter}"
+                if letter == 'g'
+                  img src: 'images/chess_pieces/white_knight.png', class: "chess_piece #{num+letter}"
+                if letter == 'c'
+                  img src: 'images/chess_pieces/white_bishop.png', class: "chess_piece #{num+letter}"
+                if letter == 'e'
+                  img src: 'images/chess_pieces/white_queen.png', class: "chess_piece #{num+letter}"
 
-          else if num in [2,4,6,8] and letter in ['b','d','f','h']
-            td class: "dark #{num+letter}", ->
+          else if num % 2 == 0 and letter in ['b','d','f','h']
+            td class: "dark", ->
               if num == 2
                 img src: 'images/chess_pieces/white_pawn.png', class: "chess_piece #{num+letter}"
-              if num == 8 and letter in ['a','h']
-                img src: 'images/chess_pieces/black_rook.png', class: "chess_piece #{num+letter}"
-              if num == 8 and letter in ['b','g']
-                img src: 'images/chess_pieces/black_knight.png', class: "chess_piece #{num+letter}"
-              if num == 8 and letter in ['c','f']
-                img src: 'images/chess_pieces/black_bishop.png', class: "chess_piece #{num+letter}"
-              if num == 8 and letter == 'd'
-                img src: 'images/chess_pieces/black_king.png', class: "chess_piece #{num+letter}"
+              if num == 8 
+                if letter == 'h'
+                  img src: 'images/chess_pieces/black_rook.png', class: "chess_piece #{num+letter}"
+                if letter == 'b'
+                  img src: 'images/chess_pieces/black_knight.png', class: "chess_piece #{num+letter}"
+                if letter == 'f'
+                  img src: 'images/chess_pieces/black_bishop.png', class: "chess_piece #{num+letter}"
+                if letter == 'd'
+                  img src: 'images/chess_pieces/black_king.png', class: "chess_piece #{num+letter}"
 
           else
-            td class: "light #{num+letter}", ->
+            td class: "light", ->
               if num == 2
                 img src: 'images/chess_pieces/white_pawn.png', class: "chess_piece #{num+letter}"
               if num == 7
                 img src: 'images/chess_pieces/black_pawn.png', class: "chess_piece #{num+letter}"
-              if num == 1 and letter in ['a','h']
-                img src: 'images/chess_pieces/white_rook.png', class: "chess_piece #{num+letter}"
-              if num == 1 and letter in ['b','g']
-                img src: 'images/chess_pieces/white_knight.png', class: "chess_piece #{num+letter}"
-              if num == 1 and letter in ['c','f']
-                img src: 'images/chess_pieces/white_bishop.png', class: "chess_piece #{num+letter}"
-              if num == 1 and letter == 'd'
-                img src: 'images/chess_pieces/white_king.png', class: "chess_piece #{num+letter}"
-              if num == 8 and letter in ['a','h']
-                img src: 'images/chess_pieces/black_rook.png', class: "chess_piece #{num+letter}"
-              if num == 8 and letter in ['b','g']
-                img src: 'images/chess_pieces/black_knight.png', class: "chess_piece #{num+letter}"
-              if num == 8 and letter in ['c','f']
-                img src: 'images/chess_pieces/black_bishop.png', class: "chess_piece #{num+letter}"
-              if num == 8 and letter == 'e'
-                img src: 'images/chess_pieces/black_queen.png', class: "chess_piece #{num+letter}"
+              if num == 1 
+                if letter == 'h'
+                  img src: 'images/chess_pieces/white_rook.png', class: "chess_piece #{num+letter}"
+                if letter == 'b'
+                  img src: 'images/chess_pieces/white_knight.png', class: "chess_piece #{num+letter}"
+                if letter == 'f'
+                  img src: 'images/chess_pieces/white_bishop.png', class: "chess_piece #{num+letter}"
+                if letter == 'd'
+                  img src: 'images/chess_pieces/white_king.png', class: "chess_piece #{num+letter}"
+              if num == 8
+                if letter == 'a'
+                  img src: 'images/chess_pieces/black_rook.png', class: "chess_piece #{num+letter}"
+                if letter == 'g'
+                  img src: 'images/chess_pieces/black_knight.png', class: "chess_piece #{num+letter}"
+                if letter == 'c'
+                  img src: 'images/chess_pieces/black_bishop.png', class: "chess_piece #{num+letter}"
+                if letter == 'e'
+                  img src: 'images/chess_pieces/black_queen.png', class: "chess_piece #{num+letter}"
 coffeescript ->
   jQuery(document).ready ->
     now.ready ->
