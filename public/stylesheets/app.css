@@ -114,6 +114,10 @@ a:hover {
   margin-left: 30px;
 }
 
+img.chess_piece{
+  margin-left: 18px;
+}
+
 #chessboard table tr td.light{
   width: 60px;
   height: 60px;

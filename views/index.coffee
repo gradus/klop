@@ -15,14 +15,53 @@ div id: 'chessboard', ->
       tr ->
         for letter in ['a','b','c','d','e','f','g','h']
           if num in [1,3,5,7] and letter in ['a','c','e','g']
-            td class: 'dark', -> 
-              "&nbsp;" + letter + num
+            td class: "dark #{num+letter}", ->
+              if num == 7
+                img src: 'images/chess_pieces/black_pawn.png', class: 'chess_piece'
+              if num == 1 and letter in ['a','h']
+                img src: 'images/chess_pieces/white_rook.png', class: 'chess_piece'
+              if num == 1 and letter in ['b','g']
+                img src: 'images/chess_pieces/white_knight.png', class: 'chess_piece'
+              if num == 1 and letter in ['c','f']
+                img src: 'images/chess_pieces/white_bishop.png', class: 'chess_piece'
+              if num == 1 and letter == 'e'
+                img src: 'images/chess_pieces/white_queen.png', class: 'chess_piece'
+
           else if num in [2,4,6,8] and letter in ['b','d','f','h']
-            td class: 'dark', -> 
-              "&nbsp;" + letter + num
+            td class: "dark #{num+letter}", ->
+              if num == 2
+                img src: 'images/chess_pieces/white_pawn.png', class: 'chess_piece'
+              if num == 8 and letter in ['a','h']
+                img src: 'images/chess_pieces/black_rook.png', class: 'chess_piece'
+              if num == 8 and letter in ['b','g']
+                img src: 'images/chess_pieces/black_knight.png', class: 'chess_piece'
+              if num == 8 and letter in ['c','f']
+                img src: 'images/chess_pieces/black_bishop.png', class: 'chess_piece'
+              if num == 8 and letter == 'd'
+                img src: 'images/chess_pieces/black_king.png', class: 'chess_piece'
+
           else
-            td class: 'light', -> 
-              "&nbsp;" + letter + num
+            td class: "light #{num+letter}", ->
+              if num == 2
+                img src: 'images/chess_pieces/white_pawn.png', class: 'chess_piece'
+              if num == 7
+                img src: 'images/chess_pieces/black_pawn.png', class: 'chess_piece'
+              if num == 1 and letter in ['a','h']
+                img src: 'images/chess_pieces/white_rook.png', class: 'chess_piece'
+              if num == 1 and letter in ['b','g']
+                img src: 'images/chess_pieces/white_knight.png', class: 'chess_piece'
+              if num == 1 and letter in ['c','f']
+                img src: 'images/chess_pieces/white_bishop.png', class: 'chess_piece'
+              if num == 1 and letter == 'd'
+                img src: 'images/chess_pieces/white_king.png', class: 'chess_piece'
+              if num == 8 and letter in ['a','h']
+                img src: 'images/chess_pieces/black_rook.png', class: 'chess_piece'
+              if num == 8 and letter in ['b','g']
+                img src: 'images/chess_pieces/black_knight.png', class: 'chess_piece'
+              if num == 8 and letter in ['c','f']
+                img src: 'images/chess_pieces/black_bishop.png', class: 'chess_piece'
+              if num == 8 and letter == 'e'
+                img src: 'images/chess_pieces/black_queen.png', class: 'chess_piece'
 coffeescript ->
   jQuery(document).ready ->
     if $.cookie('klop_name')
