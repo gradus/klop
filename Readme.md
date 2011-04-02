@@ -10,7 +10,9 @@ npm install underscore
 
 npm install coffeekup
 
-npm install dirty
+npm install hiredis redis
+
+npm install now
 
 run tests with 'cake test'
 
