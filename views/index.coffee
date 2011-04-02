@@ -64,21 +64,27 @@ div id: 'chessboard', ->
                 img src: 'images/chess_pieces/black_queen.png', class: 'chess_piece'
 coffeescript ->
   jQuery(document).ready ->
-    $( ".chess_piece" ).draggable()
+    now.ready ->
+      $("#messages").show()
+      now.distributeMessage('has connected')
+    
     if $.cookie('klop_name')
       now.name = $.cookie('klop_name')
     else
       now.name = prompt("What's your name?", "")
       $.cookie('klop_name', now.name)
 
+    $( ".chess_piece" ).draggable(
+      stop: (event, ui) ->
+        console.log "moved a piece"
+      )
+
     $("#text_input").keyup (event) ->
       if event.keyCode == 13
-        $("#messages").show()
         now.distributeMessage($("#text_input").val())
         $("#text_input").val("")
 
     $("#send_button").click( () ->
-      $("#messages").show()
       now.distributeMessage($("#text_input").val())
       $("#text_input").val("")
     )
