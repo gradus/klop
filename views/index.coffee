@@ -84,8 +84,6 @@ coffeescript ->
       refreshPositions: true
       start: (event, ui) ->
         className = ui.helper.context.className.toString()
-        startTop = ui.offset.top
-        start_left = ui.offset.left
       stop: (event, ui) ->
         piecePath= ui.helper.context.src.match(/chess_pieces*.*/)
         pieceName = piecePath.toString().replace("chess_pieces/", "")
