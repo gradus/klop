@@ -60,7 +60,7 @@ a:hover {
   font-size: 18px;
 }
 
-#content img { margin: 10px;}
+#left img { margin: 10px; }
 
 #chat_input {margin-top:20px;}
 
@@ -108,6 +108,22 @@ a:hover {
 #send_button:hover {
  background-color:#ffCC00;
  cursor: pointer;
+}
+
+#chessboard {
+  margin-left: 30px;
+}
+
+#chessboard table tr td.light{
+  width: 60px;
+  height: 60px;
+  background: url('../images/light_square.png')
+}
+
+#chessboard table tr td.dark{
+  width: 60px;
+  height: 60px;
+  background: url('../images/dark_square.png')
 }
 
 #footer {
