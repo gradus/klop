@@ -64,6 +64,7 @@ div id: 'chessboard', ->
                 img src: 'images/chess_pieces/black_queen.png', class: 'chess_piece'
 coffeescript ->
   jQuery(document).ready ->
+    $( ".chess_piece" ).draggable()
     if $.cookie('klop_name')
       now.name = $.cookie('klop_name')
     else
